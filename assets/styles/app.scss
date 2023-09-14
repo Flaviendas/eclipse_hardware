@@ -1,34 +1,122 @@
-@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  margin:0;
+  padding:0px;
+}
+$backgroundpage:#F8FBFC;
+$backgroundColor: #8864AF;
+// $textcolor:#000000;
+$borderLeftColor:#58b5fc;
+$color:#E6F1F4;
+
+html, body{
+  height: 100vh;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $backgroundpage!important;
+  font-size: 16px;
+  color: $color;
+}
+
+.main{
+  display: flex;
+  height: 100vh;
+}
 
 
-.navbar,
-.navbar-collapse {
+.toto{
+  flex-grow: 1;
+  padding: 2em;
+  background-size: cover;
+  background-position: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
-.navbar-expand-lg .navbar-nav {
-  flex-direction: column;
+.title{
+  font-size: 3em;
+}
+.info{
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  margin: 1.5em;
+}
+.btn{
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  padding: .75em 1em;
+  font-size: 1em;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .4);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  background-color: rgb(134, 49, 0);
+  color: #fff;
 }
 
-.navbar .container-fluid, 
-.navbar-expand-lg .navbar-collapse, 
-.navbar-expand-lg .navbar-nav{
-  flex-direction: column;
-  align-items: flex-start;
+.sidebar{
+  width: 260px;
+  flex-shrink: 0;
+  background-color:$backgroundColor ;
+  height: 100%;
+  overflow: auto;
 }
 
-.navbar {
-    width: 28%;
-    height: 100vh;
+
+.sidebar-item{
+  padding: .75em 1em;
+  display: block;
+  transition: background-color .15s;
+  border-radius: 5px;
+}
+.sidebar-item:hover{
+  background-color: rgba(255, 255, 255, .1);
 }
 
-.navbar-brand {
-    margin-left: 0.5em;
-    padding-bottom: 0;
-    border-bottom: 4px solid #464646;
-  }
-  .navbar {
-    align-items: flex-start;
-  }
+.sidebar-title{
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-between;
+}
+.sidebar-title span i{
+  display: inline-block;
+  width: 1.5em;
+}
+.sidebar-title .toggle-btn{
+  cursor: pointer;
+  transition: transform .3s;
+}
+.sidebar-item.open > .sidebar-title .toggle-btn{
+  transform: rotate(180deg);
+}
+.sidebar-content{
+  padding-top: .25em;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar-item.open > .sidebar-content{
+  height: auto;
+}
+
+.sidebar-item.plain{
+  text-decoration: none;
+}
+.sidebar-item.plain:hover{
+  text-decoration: underline;
+}
+.sidebar-item.plain i{
+  display: inline-block;
+  width: 1.7em;
+}
+
 
 
