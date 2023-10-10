@@ -1,5 +1,5 @@
-// @import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
-// @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 * {
   margin:0;
@@ -12,50 +12,81 @@ $borderLeftColor:#58b5fc;
 $color:dark;
 
 
-.navbar-menu {
-  height:100vh;
-  background-color: $backgroundColor;
-  box-shadow: 1px 1px 7px rgba(0,0,0,0.15);
-  transition: all 0.5s ease;
-  
-}
-.burger{
-  display:flex;
-  justify-content: flex-end;
-}
-.burger img {
-  padding: 25px 8px 0px 0px;
-  cursor: pointer;
-}
-.navbar__list {
-  list-style-type: none;
-  
-}
-.navbar__li {
-  display: inline-block;
-  padding:0px 0px 0px 12px;
-  position: relative;
-  top:2.5px;
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 38px;
-  color: $textcolor;
-  font-family: "Lato";
-  font-weight: 400;
-}
-.navbar__li-box:first-child {
-  margin-top:53px;
-  
-}
-.navbar__li-box {
-  height: 43px;
-  margin-top:15px;
-}
-.navbar__li-box:hover {
-  border-left: 7px solid $borderLeftColor;
-  cursor: pointer;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body{
+  height: 100vh;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  // color: #fff;
+}
+
+.title{
+  font-size: 3em;
+}
+
+
+.sidebar{
+  width: 260px;
+  flex-shrink: 0;
+  background-color: $backgroundColor;
+  height: 100%;
+  overflow: auto;
+}
+
+
+.sidebar-item{
+  padding: .75em 1em;
+  display: block;
+  transition: background-color .15s;
+  border-radius: 5px;
+}
+.sidebar-item:hover{
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.sidebar-title{
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-between;
+}
+.sidebar-title span i{
+  display: inline-block;
+  width: 1.5em;
+}
+.sidebar-title .toggle-btn{
+  cursor: pointer;
+  transition: transform .3s;
+}
+.sidebar-item.open > .sidebar-title .toggle-btn{
+  transform: rotate(180deg);
+}
+.sidebar-content{
+  padding-top: .25em;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar-item.open > .sidebar-content{
+  height: auto;
+}
+
+.sidebar-item.plain{
+  // color: #fff;
+  text-decoration: none;
+}
+.sidebar-item.plain:hover{
+  text-decoration: underline;
+}
+.sidebar-item.plain i{
+  display: inline-block;
+  width: 1.7em;
+}
 .footer {
   background-color: $backgroundColor;
   // border-top:2px solid red;
@@ -66,7 +97,7 @@ $color:dark;
   font-size: 25px;
  }
 
- .main{
+ .base{
   display: flex;
   height: 100vh;
 }
@@ -75,23 +106,18 @@ $color:dark;
 .toto{
   flex-grow: 1;
   padding: 2em;
-  // background-image: radial-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .8)), url('../public/banner.png');
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   text-align: center;
-}
-.title{
-  font-size: 3em;
 }
 .info{
   font-size: 1.1em;
   letter-spacing: 1px;
   line-height: 1.5;
   margin: 1.5em;
-  color: rgb(224, 224, 224);
 }
 .btn{
   margin: 0 auto;
